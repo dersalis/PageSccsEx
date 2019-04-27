@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        .col-sm-5,
+        .col-sm-7 {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+
+                <table id="tMaterials" class="table">
+                    <thead>
+                        <tr>
+                            <th>Akcja</th>
+                            <th>Typ</th>
+                            <th>Wartość</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materials">
+                        <tr>
+                            <td><input type="checkbox" onchange="checkRow()"></td>
+                            <td id="mType">PO 10</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onchange="checkRow()"></td>
+                            <td id="mType">PO 20</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onchange="checkRow()"></td>
+                            <td id="mType">PO 10</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onchange="checkRow()"></td>
+                            <td id="mType">PO 30</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onchange="checkRow()"></td>
+                            <td id="mType">PO 30</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onchange="checkRow()"></td>
+                            <td id="mType">PO 30</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onchange="checkRow()"></td>
+                            <td id="mType">PO 40</td>
+                            <td>40</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-sm-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Typ</th>
+                            <th>Ilość</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ttBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function PalletType(name, quantity) {
+            this.name = name,
+            this.quantity = quantity
+        }
+
+        function checkRow() {
+            var typesArray = [];
+            const checkedRows = $('#materials').find("td:has('input[type=checkbox]:checked')").parent().find('#mType');
+            console.log('- Checked -');
+            console.log(checkedRows);
+            checkedRows.each((index, value) => {
+                //console.log($(value).text());
+                // Jeśli tablica pusta
+                var isExist = false;
+                if(typesArray.length <= 0) {
+                    typesArray.push(new PalletType($(value).text(), 1));
+                }
+                else {
+                    for(let i in typesArray) {
+                        if(typesArray[i].name == $(value).text()) {
+                            console.log('Istnieje: ' + $(value).text());
+                            typesArray[i].quantity += 1;
+                            isExist = true;
+                        }
+                    }
+                    if(!isExist) {
+                        typesArray.push(new PalletType($(value).text(), 1));
+                    }
+                }
+            });
+            console.log('- Types -');
+            console.log(typesArray);
+            
+            var ttBody = document.getElementById('ttBody');
+            var body = '';
+            typesArray.forEach((item) => {
+                body += '<tr><td>' + item.name + '</td><td>' + item.quantity + '</td></tr>'
+            });
+            ttBody.innerHTML = body;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.app {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+
+    .app_page {
+        width: calc(100% - 12rem) !important;
+        background: rgb(245, 243, 243);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+}

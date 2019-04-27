@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 100vh; }
+  .app .app_page {
+    width: calc(100% - 12rem) !important;
+    background: #f5f3f3;
+    -webkit-box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); }
+
+.sidebar {
+  width: 12rem; }
+
+/*# sourceMappingURL=styles.css.map */
