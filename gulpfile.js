@@ -17,5 +17,6 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('./sass/*.scss', gulp.series('styles'))
+    gulp.watch('./sass/*.scss', gulp.series('styles')),
+    gulp.watch('./sass/sidebar/*.scss', gulp.series('styles'))
 });

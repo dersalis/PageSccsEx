@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./scc/styles.css">
-    <!-- <link rel="stylesheet" href="./scc/app.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Roboto:400,700|Material+Icons" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -14,8 +14,10 @@
         <div class="sidebar">
             <!-- Logo -->
             <div class="sidebar_section">
-                <div>
-                    <a href="#"><h1>My app</h1></a>
+                <div class="sidebar_logo">
+                    <a href="#" class="sidebar_logo_wrapper">
+                        <h1 class="sidebar_logo_text" data-text="My app">My app</h1>
+                    </a>
                 </div>
             </div>
             <!-- Uzytkownik -->
@@ -33,7 +35,12 @@
                 <div>
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="#"><span>Home</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">home</i>
+                                <span>Home</span>
+                            </a>
+                        </li>
                         <li><a href="#"><span>Users</span></a></li>
                         <li><a href="#"><span>Favorite</span></a></li>
                         <li><a href="#"><span>Witdets</span></a></li>
