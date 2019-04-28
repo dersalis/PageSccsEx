@@ -1,0 +1,54 @@
+.sidebar_user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+
+    .sidebar_user_avatar_wrapper {
+        position: relative;
+        height: 6rem;
+        width: 6rem;
+
+        .sidebar_user_avatar {
+            border-radius: 50%;
+            box-shadow: $shadow-20;
+            max-width: 100%;
+        }
+
+        .sidebar_user_overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($primary, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity $transition-duration;
+
+            .sidebar_user_icon {
+                color: $light;
+                font-size: $font-size-xxl;
+                transform: scale(5);
+                opacity: 0;
+                transition: opacity $transition-duration, transform $transition-duration;
+
+                &:hover {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+    }
+    
+}

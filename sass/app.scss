@@ -2,6 +2,19 @@ $primary: #9c27b0;
 $light: #fff;
 $gray-50: #fafafa;
 
+$shadow-10: 0 .25rem 1rem rgba(0, 0, 0, .15);
+$shadow-20: 0 .27rem 1.25rem rgba(0, 0, 0, .2);
+
+$font-size-xxs: .625rem;
+$font-size-xs: .75rem;
+$font-size-sm: .9rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: .1.5rem;
+$font-size-xxl: 2rem;
+
+$transition-duration: .2s;
+
 body {
     font-family: 'Roboto', sans-serif;
 }
