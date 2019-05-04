@@ -1,6 +1,11 @@
 $primary: #9c27b0;
+$success: rgb(0, 168, 0);
 $light: #fff;
 $gray-50: #fafafa;
+
+$dark: rgba(#000, .87);
+$dark-secondary: rgba(#000, .54);
+$dark-diabled: rgba(#000, .38);
 
 $shadow-10: 0 .25rem 1rem rgba(0, 0, 0, .15);
 $shadow-20: 0 .27rem 1.25rem rgba(0, 0, 0, .2);
@@ -12,6 +17,9 @@ $font-size-md: 1rem;
 $font-size-lg: 1.25rem;
 $font-size-xl: .1.5rem;
 $font-size-xxl: 2rem;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
 
 $transition-duration: .2s;
 
@@ -30,5 +38,7 @@ body {
         width: calc(100% - 12rem) !important;
         // background: rgb(245, 243, 243);
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
     }
 }
