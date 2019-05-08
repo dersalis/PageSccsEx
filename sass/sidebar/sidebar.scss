@@ -6,6 +6,8 @@
 .sidebar{
     width: 12rem;
     background: $gray-50;
+    transition: width $transition-duration;
+    position: relative;
 
     .sidebar_section {
         display: flex;
@@ -13,6 +15,11 @@
         padding: .5rem 0;
 
         .sidebar_logo {
+            margin: 1rem 0 .5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
 
             .sidebar_logo_wrapper {
 

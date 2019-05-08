@@ -1,0 +1,123 @@
+.sidebar-toggler-checkbox {
+    &:checked {
+        + .sidebar {
+            width: 3.5rem;
+            .sidebar-toggler {
+                height: 3rem;
+                width: 100%;
+            }
+            .sidebar-toggler-icon {
+                &::before {
+                    transform: rotate(30deg);
+                }
+        
+                &::after {
+                    transform: rotate(-30deg);
+                }
+            }
+
+            .sidebar_logo_wrapper {
+                // display: block;
+                height: 0;
+                overflow: hidden;
+            }
+
+            .sidebar_user {
+                padding: .25rem;
+            }
+
+            .sidebar_user_avatar_wrapper {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            .sidebar_user_name,
+            .sidebar_user_status {
+                font-size: $font-size-xxs;
+            }
+
+            .sidebar_nav_header {
+                width: 0;
+
+                &::before {
+                    content: attr(data-toggled-short);
+                    text-transform: uppercase;
+                    margin-right: 2rem;
+                    // width: 2rem;
+                }
+            }
+
+            .sidebar_nav_item {
+                z-index: 2;
+                overflow: hidden;
+                width: 1.4rem;
+
+                &:hover, &:focus {
+                    width: 10rem;
+                    background: $gray-50;
+                    box-shadow: $shadow-10;
+                }
+            }
+
+            .sidebar_nav_notification {
+                right: .25rem;
+                top: .25rem;
+                padding: .1rem .25rem;
+                font-size: .5rem;
+                border-radius: .3rem;
+            }
+
+        }
+
+        ~ .app_page {
+            width: calc(100% - 3.5rem) !important;
+        }
+    }
+
+}
+
+.sidebar-toggler {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    // background: rgba(red, .5);
+
+    &:hover .sidebar-toggler-icon {
+        &::after, &::before {
+            background: $primary;
+        }
+    }
+
+    .sidebar-toggler-icon {
+        width: .75rem;
+        height: .5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // background: rgb(119, 179, 30);
+        transform: translate(-50%, -50%);
+
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            width: .75rem;
+            height: .15rem;
+            background: $grey-300;
+            transition: transform .4s, background $transition-duration;
+        }
+
+        &::before {
+            top: 0;
+            transform: rotate(-30deg);
+        }
+
+        &::after {
+            bottom: 0;
+            transform: rotate(30deg);
+        }
+    }
+}

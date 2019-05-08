@@ -13,7 +13,12 @@
 <body>
 
     <div class="app">
+
+        <input class="sidebar-toggler-checkbox" type="checkbox" id="sidebar-toggler">
         <div class="sidebar">
+            <label for="sidebar-toggler" class="sidebar-toggler">
+                <i class="sidebar-toggler-icon"></i>
+            </label>
             <!-- Logo -->
             <div class="sidebar_section">
                 <div class="sidebar_logo">
@@ -41,7 +46,7 @@
             <!-- Nawigacja #1 -->
             <div class="sidebar_section">
                 <div class="sidebar_nav">
-                    <h4 class="sidebar_nav_header">Navigation</h4>
+                    <h4 class="sidebar_nav_header" data-toggled-short="Nav">Navigation</h4>
                     <ul>
                         <li>
                             <a href="#" class="sidebar_nav_item sidebar_nav_item_primary">
@@ -82,7 +87,7 @@
             <!-- Nawigacja #2 -->
             <div class="sidebar_section">
                 <div class="sidebar_nav">
-                    <h4 class="sidebar_nav_header">Community</h4>
+                    <h4 class="sidebar_nav_header" data-toggled-short="Com">Community</h4>
                     <ul>
                         <li>
                             <a href="#" class="sidebar_nav_item sidebar_nav_item_secondary">
@@ -122,7 +127,7 @@
             <!-- Nawigacja #3 -->
             <div class="sidebar_section">
                 <div class="sidebar_nav">
-                    <h4 class="sidebar_nav_header">Settings</h4>
+                    <h4 class="sidebar_nav_header" data-toggled-short="Set">Settings</h4>
                     <ul>
                         <li>
                             <a href="#" class="sidebar_nav_item sidebar_nav_item_third">
@@ -174,6 +179,56 @@
                 <div>
                     <h2>Dashboard</h2>
                 </div>
+
+                <div class="test">
+                    <style>
+                        .test {
+                            display: flex;
+                            flex-direction: row;
+                        }
+
+                        .swithedItem1, .swithedItem2, .swithedItem3 {
+                            height: 200px;
+                            width: 200px;
+                            background: red;
+                            margin: 30px;
+                            transition: background 1s;
+                        }
+
+                        .swithedItem1>label, .swithedItem2>label, .swithedItem3>label {
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+
+                        #someCheck1, #someCheck2, #someCheck3 {
+                            display: none;
+                        }
+
+                        #someCheck1:checked+.swithedItem1,
+                        #someCheck2:checked+.swithedItem2,
+                        #someCheck3:checked+.swithedItem3 {
+                            background: greenyellow;
+                        }
+                    </style>
+
+                    <input type="radio" id="someCheck1" name="switchers">
+                    <div class="swithedItem1">
+                        <label for="someCheck1"></label>
+                    </div>
+                    <input type="radio" id="someCheck2" name="switchers">
+                    <div class="swithedItem2">
+                        <label for="someCheck2"></label>
+                    </div>
+                    <input type="radio" id="someCheck3" name="switchers">
+                    <div class="swithedItem3">
+                        <label for="someCheck3"></label>
+                    </div>
+
+
+
+                </div>
+
             </div>
         </div>
     </div>

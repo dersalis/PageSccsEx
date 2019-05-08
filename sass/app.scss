@@ -2,6 +2,7 @@ $primary: #9c27b0;
 $success: rgb(0, 168, 0);
 $light: #fff;
 $gray-50: #fafafa;
+$grey-300: #e0e0e0;
 
 $dark: rgba(#000, .87);
 $dark-secondary: rgba(#000, .54);
@@ -32,13 +33,16 @@ body {
     flex-direction: row;
     min-height: 100vh;
     
-    
+    .sidebar-toggler-checkbox {
+        display: none;
+    }
 
     .app_page {
         width: calc(100% - 12rem) !important;
-        // background: rgb(245, 243, 243);
+        background: white;
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         position: relative;
         z-index: 1;
+        transition: width $transition-duration;
     }
 }
