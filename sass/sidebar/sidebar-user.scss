@@ -97,4 +97,44 @@
             }
         }
     }
+
+    &.slim {
+        flex-direction: row;
+
+        .sidebar_user_avatar_wrapper {
+            height: 2rem;
+            width: 2rem;
+
+            .sidebar_user_overlay {
+
+                .sidebar_user_icon {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .sidebar_user_name_wraper {
+            margin-top: .25rem;
+            margin-left: .5rem;
+            align-items: flex-start;
+
+            .sidebar_user_name {
+                font-weight: $font-weight-normal;
+            }
+
+            .sidebar_user_status {
+                margin: 0;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    left: -1rem;
+                    bottom: 0;
+                    margin-left: 0;
+                    border: 1px solid $gray-50;
+                }
+            }
+
+        }
+    }
 }

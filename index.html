@@ -12,6 +12,7 @@
 
 <body>
 
+    <input type="text" class="navbar-search-input" id="search-input" placeholder="I'm looking for...">
     <div class="app">
 
         <input class="sidebar-toggler-checkbox" type="checkbox" id="sidebar-toggler">
@@ -152,85 +153,77 @@
         <div class="app_page">
             <div class="navbar">
                 <!-- Wyszukiwarka -->
-                <div>
-                    <label>
-                        <span>Search</span>
+                <div class="navbar-search">
+                    <label class="navbar-search-label-icon" for="search-input">
+                        <i class="material-icons navbar-search-icon">search</i>
+                        <span class="navbar-search-slogan">Search</span>
                     </label>
                 </div>
-                <div>
-                    <div class="nav_section">
-                        <div>
-                            <a href="#"><span>Polski</span></a>
+                <div class="navbar-wraper">
+                    <div class="navbar_section">
+                        <div class="navbar_lang_switcher">
+                            <a href="#" class="navbar_lang_switcher_flag_wrapper active">
+                                <i class="navbar_lang_switcher_flag poland"></i>
+                                <span class="lang_switcher_country_name">Polski</span>
+                            </a>
+                            <ul class="navbar_lang_switcher_flag_list">
+                                <li>
+                                    <a href="#" class="navbar_lang_switcher_flag_wrapper">
+                                        <i class="navbar_lang_switcher_flag"></i>
+                                        <span class="lang_switcher_country_name">Italiano</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navbar_lang_switcher_flag_wrapper">
+                                        <i class="navbar_lang_switcher_flag"></i>
+                                        <span class="lang_switcher_country_name">Greece</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navbar_lang_switcher_flag_wrapper">
+                                        <i class="navbar_lang_switcher_flag"></i>
+                                        <span class="lang_switcher_country_name">Cech Republic</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="nav_section">
-                        <div>
-                            <a href="#">Rita Cook</a>
+                        <div class="sidebar_user slim">
+                            <div class="sidebar_user_avatar_wrapper">
+                                <img class="sidebar_user_avatar" src="https://randomuser.me/api/portraits/women/57.jpg"
+                                    alt="User">
+                                <a href="#" class="sidebar_user_overlay">
+                                    <i class="material-icons sidebar_user_icon">add_a_photo</i>
+                                </a>
+                            </div>
+                            <div class="sidebar_user_name_wraper">
+                                <a href="#" class="sidebar_user_name">Rita Cook</a>
+                                <span class="sidebar_user_status sidebar_user_status_success">Online</span>
+                            </div>
                         </div>
                     </div>
                     <div class="nav_section">
-                        <div>
-                            <a href="#">Sign out</a>
+                        <div class="navbar_sing_out">
+                            <a href="#" class="navbar_sing_out_button">
+                                <i class="material-icons navbar_sing_out_icon">power_settings_new</i>
+                                <span class="navbar_sing_out_text">Sign out</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="dashboard">
                 <div>
                     <h2>Dashboard</h2>
                 </div>
 
-                <div class="test">
-                    <style>
-                        .test {
-                            display: flex;
-                            flex-direction: row;
-                        }
 
-                        .swithedItem1, .swithedItem2, .swithedItem3 {
-                            height: 200px;
-                            width: 200px;
-                            background: red;
-                            margin: 30px;
-                            transition: background 1s;
-                        }
-
-                        .swithedItem1>label, .swithedItem2>label, .swithedItem3>label {
-                            display: block;
-                            height: 100%;
-                            width: 100%;
-                        }
-
-                        #someCheck1, #someCheck2, #someCheck3 {
-                            display: none;
-                        }
-
-                        #someCheck1:checked+.swithedItem1,
-                        #someCheck2:checked+.swithedItem2,
-                        #someCheck3:checked+.swithedItem3 {
-                            background: greenyellow;
-                        }
-                    </style>
-
-                    <input type="radio" id="someCheck1" name="switchers">
-                    <div class="swithedItem1">
-                        <label for="someCheck1"></label>
-                    </div>
-                    <input type="radio" id="someCheck2" name="switchers">
-                    <div class="swithedItem2">
-                        <label for="someCheck2"></label>
-                    </div>
-                    <input type="radio" id="someCheck3" name="switchers">
-                    <div class="swithedItem3">
-                        <label for="someCheck3"></label>
-                    </div>
-
-
-
-                </div>
 
             </div>
         </div>
+
     </div>
 
 </body>

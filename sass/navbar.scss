@@ -1,0 +1,22 @@
+.navbar {
+    background: $light;
+    height: 3.5rem;
+    box-shadow: $shadow-10;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbar-wraper {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+
+        .nav_section {
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+            height: 100%;
+        }
+    }
+}

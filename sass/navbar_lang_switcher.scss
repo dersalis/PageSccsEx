@@ -1,0 +1,72 @@
+.navbar_lang_switcher {
+    position: relative;
+    height: 100%;
+
+    &:hover {
+        .navbar_lang_switcher_flag_wrapper {
+            height: 3rem;
+            opacity: 1;
+        }
+    }
+
+    .navbar_lang_switcher_flag_list {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: $shadow-20;
+        margin-left: -1rem;
+    }
+
+    .navbar_lang_switcher_flag_wrapper {
+        display: flex;
+        align-items: center;
+        // height: 3rem;
+        // padding: 0 1rem;
+        height: 0;
+        opacity: 0;
+
+        transition: height $transition-duration, opacity $transition-duration, box-shadow $transition-duration;
+
+        &:not(.active) {
+            padding: 0 1rem;
+
+            &:hover {
+                background: $gray-100;
+                box-shadow: $shadow-20;
+            }
+        }
+
+        &.active {
+            height: 100%;
+            opacity: 1;
+
+            &::after {
+                content: 'keyboard_arrow_down';
+                font-family: 'Material Icons';
+                color: $dark-secondary;
+            }
+        }
+
+        .lang_switcher_country_name {
+            white-space: nowrap;
+            // color: $dark-secondary;
+            // font-size: $font-size-sm;
+            // line-height: 1.25;
+        }
+    
+        .navbar_lang_switcher_flag {
+            width: 1.74rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            box-shadow: $shadow-20;
+            margin-right: .5rem;
+
+            &.poland {
+                background: linear-gradient(to bottom,white 50%,red 51%,red 100%);
+            }
+        }
+    }
+
+    
+}

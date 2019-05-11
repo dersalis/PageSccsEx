@@ -2,47 +2,62 @@ $primary: #9c27b0;
 $success: rgb(0, 168, 0);
 $light: #fff;
 $gray-50: #fafafa;
+$gray-100: #f5f5f5;
 $grey-300: #e0e0e0;
 
-$dark: rgba(#000, .87);
-$dark-secondary: rgba(#000, .54);
-$dark-diabled: rgba(#000, .38);
+$dark: rgba(#000, 0.87);
+$dark-secondary: rgba(#000, 0.54);
+$dark-diabled: rgba(#000, 0.38);
 
-$shadow-10: 0 .25rem 1rem rgba(0, 0, 0, .15);
-$shadow-20: 0 .27rem 1.25rem rgba(0, 0, 0, .2);
+$shadow-10: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+$shadow-20: 0 0.27rem 1.25rem rgba(0, 0, 0, 0.2);
 
-$font-size-xxs: .625rem;
-$font-size-xs: .75rem;
-$font-size-sm: .9rem;
+$font-size-xxs: 0.625rem;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.9rem;
 $font-size-md: 1rem;
 $font-size-lg: 1.25rem;
-$font-size-xl: .1.5rem;
+$font-size-xl: 1.5rem;
 $font-size-xxl: 2rem;
 
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-$transition-duration: .2s;
+$transition-duration: 0.2s;
+
+html {
+  overflow-x: hidden;
+}
+
+span,
+p {
+  color: $dark-secondary;
+  font-size: $font-size-sm;
+  line-height: 1.25;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  // font-size: $font-size-md;
 }
 
 .app {
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-    
-    .sidebar-toggler-checkbox {
-        display: none;
-    }
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
 
-    .app_page {
-        width: calc(100% - 12rem) !important;
-        background: white;
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-        position: relative;
-        z-index: 1;
-        transition: width $transition-duration;
-    }
+  transition: transform $transition-duration;
+
+  .sidebar-toggler-checkbox {
+    display: none;
+  }
+
+  .app_page {
+    width: calc(100% - 12rem) !important;
+    background: white;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    transition: width $transition-duration;
+  }
 }
