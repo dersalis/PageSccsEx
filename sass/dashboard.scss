@@ -1,0 +1,29 @@
+.dashboard {
+    margin: 0 2rem;
+    
+    .dashboard_heading {
+        margin-bottom: 2rem;
+
+        &.main {
+            margin-bottom: 0;
+        }
+    }
+
+    .dashboart_section {
+        box-shadow: $shadow-10;
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+        background: $light;
+        border-radius: .25rem;
+
+        &.transparent {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        &.small {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}

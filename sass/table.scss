@@ -1,0 +1,32 @@
+.table {
+    width: 100%;
+
+    .table_tr {
+        border-bottom: 1px solid gray;
+
+        &:nth-of-type(even) {
+            background: $gray-50;
+        }
+    }
+
+    .table_td {
+        padding: .25rem;
+        height: 3.5rem;
+        vertical-align: middle;
+        font-size: $font-size-sm;
+        color: $dark-secondary;
+    }
+
+    .table_action_icon {
+        cursor: pointer;
+        font-size: $font-size-lg;
+        padding: .5rem;
+        color: $dark-diabled;
+        transition: color $transition-duration;
+        margin: -.5rem -.25rem;
+
+        &:focus, &:hover {
+            color: $primary;
+        }
+    }
+}
