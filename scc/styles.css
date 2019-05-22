@@ -871,21 +871,167 @@ body {
     .table .table_tr:nth-of-type(even) {
       background: #fafafa; }
   .table .table_td {
-    padding: .25rem;
+    padding: 0.25rem;
     height: 3.5rem;
     vertical-align: middle;
     font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.54); }
+    color: rgba(0, 0, 0, 0.54);
+    position: relative; }
   .table .table_action_icon {
     cursor: pointer;
     font-size: 1.25rem;
-    padding: .5rem;
+    padding: 0.5rem;
     color: rgba(0, 0, 0, 0.38);
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
     transition: color 0.2s;
-    margin: -.5rem -.25rem; }
+    margin: -0.5rem -0.25rem; }
     .table .table_action_icon:focus, .table .table_action_icon:hover {
       color: #9c27b0; }
+  .table .table_onboarding {
+    background: red;
+    display: block;
+    width: 6rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 1rem;
+    color: white; }
+    .table .table_onboarding.pending {
+      background: #7fbd21; }
+    .table .table_onboarding.completed {
+      background: red; }
+  .table .table_dots {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem; }
+    .table .table_dots::before {
+      content: "";
+      display: block;
+      height: 0.3rem;
+      width: 0.3rem;
+      background: gray;
+      border-radius: 50%;
+      -webkit-box-shadow: -0.5rem 0 0 0 gray, 0.5rem 0 0 0 gray;
+              box-shadow: -0.5rem 0 0 0 gray, 0.5rem 0 0 0 gray;
+      -webkit-transition: height 0.2s, width 0.2s, -webkit-box-shadow 0.2s;
+      transition: height 0.2s, width 0.2s, -webkit-box-shadow 0.2s;
+      -o-transition: height 0.2s, width 0.2s, box-shadow 0.2s;
+      transition: height 0.2s, width 0.2s, box-shadow 0.2s;
+      transition: height 0.2s, width 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s; }
+    .table .table_dots:hover::before {
+      background: #9c27b0;
+      -webkit-box-shadow: 0.5rem 0 0 0 #9c27b0, -0.5rem 0 0 0 #9c27b0;
+              box-shadow: 0.5rem 0 0 0 #9c27b0, -0.5rem 0 0 0 #9c27b0; }
+  .table .row_actions {
+    display: none; }
+    .table .row_actions:checked + .table_dots::before {
+      background: #9c27b0;
+      -webkit-box-shadow: -0.5rem 0 0 0 #9c27b0, 0.5rem 0 0 0 #9c27b0;
+              box-shadow: -0.5rem 0 0 0 #9c27b0, 0.5rem 0 0 0 #9c27b0; }
+    .table .row_actions:checked + .table_dots:hover::before {
+      background: #9c27b0;
+      -webkit-box-shadow: 0.5rem 0 0 0 #9c27b0, -0.5rem 0 0 0 #9c27b0;
+              box-shadow: 0.5rem 0 0 0 #9c27b0, -0.5rem 0 0 0 #9c27b0; }
+    .table .row_actions:checked ~ .table_more_actions .table_action {
+      height: 3rem;
+      opacity: 1; }
+  .table .table_th {
+    padding: 0 0.25rem;
+    height: 2.5rem;
+    vertical-align: top;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 0.9rem;
+    text-align: left;
+    font-weight: 700;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s; }
+    .table .table_th:not(.not_sortable) {
+      cursor: pointer; }
+      .table .table_th:not(.not_sortable):hover {
+        color: rgba(0, 0, 0, 0.54); }
+        .table .table_th:not(.not_sortable):hover::after {
+          opacity: 1; }
+      .table .table_th:not(.not_sortable)::after {
+        content: "arrow_drop_up";
+        font-family: "Material Icons";
+        display: inline-block;
+        font-size: 1rem;
+        position: relative;
+        top: 0.2rem;
+        opacity: 0;
+        -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+        transition: opacity 0.3s, -webkit-transform 0.3s;
+        -o-transition: opacity 0.3s, transform 0.3s;
+        transition: opacity 0.3s, transform 0.3s;
+        transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s; }
+    .table .table_th.sort_asc {
+      color: #9c27b0; }
+      .table .table_th.sort_asc::after {
+        opacity: 1; }
+      .table .table_th.sort_asc:hover {
+        color: #9c27b0; }
+        .table .table_th.sort_asc:hover::after {
+          -webkit-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+                  transform: rotate(180deg); }
+  .table .table_more_actions {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    -webkit-box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+    overflow: hidden; }
+  .table .table_action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 3rem;
+    padding-right: 1.5rem;
+    font-size: 1rem;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 0;
+    opacity: 0;
+    -webkit-transition: bacground 0.4s, opacity 0.2s, height 0.2s, -webkit-box-shadow 0.2s;
+    transition: bacground 0.4s, opacity 0.2s, height 0.2s, -webkit-box-shadow 0.2s;
+    -o-transition: box-shadow 0.2s, bacground 0.4s, opacity 0.2s, height 0.2s;
+    transition: box-shadow 0.2s, bacground 0.4s, opacity 0.2s, height 0.2s;
+    transition: box-shadow 0.2s, bacground 0.4s, opacity 0.2s, height 0.2s, -webkit-box-shadow 0.2s; }
+    .table .table_action::before {
+      font-family: "Material Icons";
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      font-size: 1.25rem; }
+    .table .table_action.action_edit::before {
+      content: "edit"; }
+    .table .table_action.action_remove::before {
+      content: "delete"; }
+    .table .table_action.action_email::before {
+      content: "mail"; }
+    .table .table_action.action_note::before {
+      content: "note_add"; }
+    .table .table_action.action_json::before {
+      content: "code"; }
+    .table .table_action:hover {
+      z-index: 1;
+      background: #dfdfdf;
+      -webkit-box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+              box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15); }
 
 /*# sourceMappingURL=styles.css.map */

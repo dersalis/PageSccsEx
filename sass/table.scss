@@ -1,32 +1,224 @@
 .table {
-    width: 100%;
+  width: 100%;
 
-    .table_tr {
-        border-bottom: 1px solid gray;
+  .table_tr {
+    border-bottom: 1px solid gray;
 
-        &:nth-of-type(even) {
-            background: $gray-50;
-        }
+    &:nth-of-type(even) {
+      background: $gray-50;
+    }
+  }
+
+  .table_td {
+    padding: 0.25rem;
+    height: 3.5rem;
+    vertical-align: middle;
+    font-size: $font-size-sm;
+    color: $dark-secondary;
+    position: relative;
+  }
+
+  .table_action_icon {
+    cursor: pointer;
+    font-size: $font-size-lg;
+    padding: 0.5rem;
+    color: $dark-diabled;
+    transition: color $transition-duration;
+    margin: -0.5rem -0.25rem;
+
+    &:focus,
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .table_onboarding {
+    background: red;
+    display: block;
+    width: 6rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 1rem;
+    color: white;
+
+    &.pending {
+      background: rgb(127, 189, 33);
     }
 
-    .table_td {
-        padding: .25rem;
-        height: 3.5rem;
-        vertical-align: middle;
-        font-size: $font-size-sm;
+    &.completed {
+      background: red;
+    }
+  }
+
+  .table_dots {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0.3rem;
+      width: 0.3rem;
+      background: gray;
+      border-radius: 50%;
+      box-shadow: -0.5rem 0 0 0 gray, 0.5rem 0 0 0 gray;
+
+      transition: height $transition-duration, width $transition-duration,
+        box-shadow $transition-duration;
+    }
+
+    &:hover {
+      &::before {
+        // height: .45rem;
+        // width: .45rem;
+        background: $primary;
+        box-shadow: 0.5rem 0 0 0 $primary, -0.5rem 0 0 0 $primary;
+      }
+    }
+  }
+
+  .row_actions {
+    display: none;
+
+    &:checked {
+      & + .table_dots {
+        &::before {
+          background: $primary;
+          box-shadow: -0.5rem 0 0 0 $primary, 0.5rem 0 0 0 $primary;
+        }
+
+        &:hover {
+          &::before {
+            // height: .45rem;
+            // width: .45rem;
+            background: $primary;
+            box-shadow: 0.5rem 0 0 0 $primary, -0.5rem 0 0 0 $primary;
+          }
+        }
+      }
+
+      & ~ .table_more_actions {
+        .table_action {
+          height: 3rem;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .table_th {
+    padding: 0 0.25rem;
+    height: 2.5rem;
+    vertical-align: top;
+    color: $dark-diabled;
+    font-size: $font-size-sm;
+    text-align: left;
+    font-weight: $font-weight-bold;
+
+    transition: color 0.3s;
+
+    &:not(.not_sortable) {
+      cursor: pointer;
+
+      &:hover {
         color: $dark-secondary;
-    }
 
-    .table_action_icon {
-        cursor: pointer;
-        font-size: $font-size-lg;
-        padding: .5rem;
-        color: $dark-diabled;
-        transition: color $transition-duration;
-        margin: -.5rem -.25rem;
-
-        &:focus, &:hover {
-            color: $primary;
+        &::after {
+          opacity: 1;
         }
+      }
+
+      &::after {
+        content: "arrow_drop_up";
+        font-family: "Material Icons";
+        display: inline-block;
+        font-size: $font-size-md;
+        position: relative;
+        top: 0.2rem;
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+      }
     }
+
+    &.sort_asc {
+      color: $primary;
+
+      &::after {
+        opacity: 1;
+      }
+
+      &:hover {
+        color: $primary;
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .table_more_actions {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 100%;
+    background: $light;
+    box-shadow: $shadow-10;
+    overflow: hidden;
+  }
+
+  .table_action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // height: 3rem;
+    padding-left: 3rem;
+    padding-right: 1.5rem;
+    font-size: $font-size-md;
+    background: $light;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+
+    height: 0;
+    opacity: 0;
+
+    transition: box-shadow $transition-duration, bacground 0.4s,
+      opacity $transition-duration, height $transition-duration;
+
+    &::before {
+      font-family: "Material Icons";
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: $font-size-lg;
+    }
+
+    &.action_edit::before {
+      content: "edit";
+    }
+
+    &.action_remove::before {
+      content: "delete";
+    }
+
+    &.action_email::before {
+      content: "mail";
+    }
+
+    &.action_note::before {
+      content: "note_add";
+    }
+
+    &.action_json::before {
+      content: "code";
+    }
+
+    &:hover {
+      z-index: 1;
+      background: $gray-100;
+      box-shadow: $shadow-10;
+    }
+  }
 }

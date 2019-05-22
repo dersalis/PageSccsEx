@@ -241,9 +241,11 @@
                                             <th class="table_th">First Name</th>
                                             <th class="table_th">Last Name</th>
                                             <th class="table_th">Email</th>
-                                            <th class="table_th">Created</th>
+                                            <th class="table_th sort_asc">Created</th>
                                             <th class="table_th">Onboarding</th>
-                                            <th class="table_th"><i class="material-icons">playlist_add</i></th>
+                                            <th class="table_th not_sortable">
+                                                <i class="material-icons">playlist_add</i>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody class="table_tbody">
@@ -257,8 +259,19 @@
                                             <td class="table_td">Spokojna</td>
                                             <td class="table_td">o.spokojna@wp.pl</td>
                                             <td class="table_td">23-06-2019</td>
-                                            <td class="table_td"><span class="table_onboarding">Pending</span></td>
-                                            <td class="table_td"><label for="" class="table_dots">...</label></td>
+                                            <td class="table_td"><span class="table_onboarding pending">Pending</span>
+                                            </td>
+                                            <td class="table_td">
+                                                <input id="row_actions" class="row_actions" type="checkbox">
+                                                <label for="row_actions" class="table_dots"></label>
+                                                <ul class="table_more_actions">
+                                                    <li class="table_action action_edit">Edit</li>
+                                                    <li class="table_action action_remove">Remove</li>
+                                                    <li class="table_action action_email">Send Email</li>
+                                                    <li class="table_action action_note">Add Note</li>
+                                                    <li class="table_action action_json">Copy to JSON</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="table_tr">
                                             <td class="table_td">
@@ -270,8 +283,12 @@
                                             <td class="table_td">Wiosenna</td>
                                             <td class="table_td">d.wiosenna@wp.pl</td>
                                             <td class="table_td">23-06-2019</td>
-                                            <td class="table_td"><span class="table_onboarding">Pending</span></td>
-                                            <td class="table_td"><label for="" class="table_dots">...</label></td>
+                                            <td class="table_td"><span class="table_onboarding completed">Pending</span>
+                                            </td>
+                                            <td class="table_td">
+                                                <input id="row_actions" class="row_actions" type="checkbox">
+                                                <label for="row_actions" class="table_dots"></label>
+                                            </td>
                                         </tr>
                                         <tr class="table_tr">
                                             <td class="table_td">
@@ -283,8 +300,12 @@
                                             <td class="table_td">Lato</td>
                                             <td class="table_td">m.lato@wp.pl</td>
                                             <td class="table_td">23-06-2019</td>
-                                            <td class="table_td"><span class="table_onboarding">Pending</span></td>
-                                            <td class="table_td"><label for="" class="table_dots">...</label></td>
+                                            <td class="table_td"><span class="table_onboarding pending">Pending</span>
+                                            </td>
+                                            <td class="table_td">
+                                                <input id="row_actions" class="row_actions" type="checkbox">
+                                                <label for="row_actions" class="table_dots"></label>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
