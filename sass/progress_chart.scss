@@ -1,0 +1,86 @@
+$chart_size: 10rem;
+$chart_border_size: .75rem;
+
+.progressbar_chart {
+    background: $gray-100;
+    width: $chart_size;
+    height: $chart_size;
+    border-radius: 50%;
+    box-shadow: $shadow-10;
+    position: relative;
+
+    .progress_chart_progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: $chart_size / 2 solid;
+        
+
+        &.part_1 {
+            border-color: $primary transparent transparent;
+            transform: rotate(-45deg);
+            z-index: 1;
+        }
+
+        &.part_2 {
+            border-color: $primary $primary transparent transparent;
+            transform: rotate(45deg);
+            z-index: 1;
+            opacity: 0;
+        }
+
+        &.part_3 {
+            border-color: $primary $primary transparent transparent;
+            transform: rotate(45deg);
+            z-index: 3;
+            opacity: 0;
+        }
+    }
+
+    $percentage: 3.6deg;
+
+    @for $i from 1 through 25 {
+        &[data-percentage="#{ $i }"] {
+            .progress_chart_progress {
+                &.part_1 {
+                    transform: rotate(-45deg + $i * $percentage);
+                }
+            }
+        }
+        &[data-percentage="#{ 25 + $i }"] {
+            .progress_chart_progress {
+                &.part_2 {
+                    transform: rotate(-45deg + $i * $percentage);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    @for $i from 1 through 50 {
+        &[data-percentage="#{ 50 + $i }"] {
+            .progress_chart_progress {
+                &.part_2{
+                    transform: rotate(45deg);
+                    opacity: 1;
+                }
+                &.part_3{
+                    transform: rotate(45deg + $i * $percentage);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .progress_chart_mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: $chart_size / 2 solid;
+        border-color: transparent $gray-100 transparent transparent;
+        z-index: 2;
+        transform: rotate(-135deg);
+    }
+}
