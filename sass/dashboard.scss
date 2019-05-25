@@ -1,6 +1,6 @@
 .dashboard {
     margin: 0 2rem;
-    
+
     .dashboard_heading {
         margin-bottom: 2rem;
 
@@ -24,6 +24,43 @@
         &.small {
             padding-top: 1rem;
             padding-bottom: 1rem;
+        }
+    }
+
+    .dashboard_chart_wrapers {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .dashboard_chart_wraper {
+            width: 50%;
+
+            &:nth-of-type(1) {
+                padding-right: 1rem;
+            }
+            &::nth-of-type(2) {
+                padding-left: 1rem;
+            }
+
+            .dashboard_chart_nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .dashboard_chart_link {
+                    padding: 1rem 0;
+                    width: 25%;
+                    max-width: 3rem;
+
+                    &.main {
+                        padding: 1rem;
+                        margin-right: .5rem;
+                        width: auto;
+                        max-width: none;
+                    }
+                }
+            }
         }
     }
 }

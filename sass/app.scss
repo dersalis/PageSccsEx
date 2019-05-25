@@ -55,6 +55,26 @@ button {
     }
 }
 
+@keyframes button-hover {
+    50% { background-position: 0 0; }
+}
+
+.button {
+    display: inline-block;
+    color: $light;
+    padding: 1rem;
+    font-size: $font-size-md;
+    border-radius: $font-size-md * 2;
+    box-shadow: $shadow-10;
+    cursor: pointer;
+    background: $primary;
+
+    &:hover, &:focus {
+        color: $light;
+        animation: button-hover 1s ease;
+    }
+}
+
 html {
   overflow-x: hidden;
 }

@@ -39,6 +39,29 @@ button {
   button:focus, button:hover {
     color: #9c27b0; }
 
+@-webkit-keyframes button-hover {
+  50% {
+    background-position: 0 0; } }
+
+@keyframes button-hover {
+  50% {
+    background-position: 0 0; } }
+
+.button {
+  display: inline-block;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  background: #9c27b0; }
+  .button:hover, .button:focus {
+    color: #fff;
+    -webkit-animation: button-hover 1s ease;
+            animation: button-hover 1s ease; }
+
 html {
   overflow-x: hidden; }
 
@@ -863,6 +886,45 @@ body {
     .dashboard .dashboart_section.small {
       padding-top: 1rem;
       padding-bottom: 1rem; }
+  .dashboard .dashboard_chart_wrapers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    .dashboard .dashboard_chart_wrapers .dashboard_chart_wraper {
+      width: 50%; }
+      .dashboard .dashboard_chart_wrapers .dashboard_chart_wraper:nth-of-type(1) {
+        padding-right: 1rem; }
+      .dashboard .dashboard_chart_wrapers .dashboard_chart_wraper::nth-of-type(2) {
+        padding-left: 1rem; }
+      .dashboard .dashboard_chart_wrapers .dashboard_chart_wraper .dashboard_chart_nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .dashboard .dashboard_chart_wrapers .dashboard_chart_wraper .dashboard_chart_nav .dashboard_chart_link {
+          padding: 1rem 0;
+          width: 25%;
+          max-width: 3rem; }
+          .dashboard .dashboard_chart_wrapers .dashboard_chart_wraper .dashboard_chart_nav .dashboard_chart_link.main {
+            padding: 1rem;
+            margin-right: .5rem;
+            width: auto;
+            max-width: none; }
 
 .table {
   width: 100%; }
