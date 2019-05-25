@@ -63,4 +63,12 @@
             }
         }
     }
+
+    .dashboard_date_range {
+        position: absolute;
+        margin-top: 15px;
+        color: $dark-diabled;
+        font-size: $font-size-sm;
+        margin-left: 1rem;
+    }
 }

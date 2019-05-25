@@ -73,6 +73,23 @@ button {
         color: $light;
         animation: button-hover 1s ease;
     }
+
+    &.calendar_toggler {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+
+        .calendar_toggler_icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 
 html {

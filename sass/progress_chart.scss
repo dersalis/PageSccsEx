@@ -8,6 +8,33 @@ $chart_border_size: .75rem;
     border-radius: 50%;
     box-shadow: $shadow-10;
     position: relative;
+    margin: 1.25rem auto 0;
+
+    &::before {
+        content: attr(data-percentage)'%';
+        z-index: 5;
+        position: absolute;
+        top: calc(50% - .75rem);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: $font-size-xxl;
+        color: $primary;
+        white-space: nowrap;
+    }
+
+    &::after {
+        content: attr(data-slogan);
+        z-index: 5;
+        position: absolute;
+        top: calc(50% + .5rem);
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 2rem);
+        font-size: $font-size-sm;
+        color: $dark-diabled;
+        text-align: center;
+        line-height: 1.25;
+    }
 
     .progress_chart_progress {
         position: absolute;
@@ -82,5 +109,30 @@ $chart_border_size: .75rem;
         border-color: transparent $gray-100 transparent transparent;
         z-index: 2;
         transform: rotate(-135deg);
+    }
+
+    .progress_chart_inner {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        z-index: 4;
+        transform: translate(-50%, -50%);
+        background: $light;
+        height: $chart_size - $chart_border_size;
+        width: $chart_size - $chart_border_size;
+    }
+
+
+    &.show_value {
+
+        &::before {
+            content: attr(data-value);
+        }
+
+        &::after {
+            content: attr(data-slogan) ' ('attr(data-percentage)'%)';
+        }
     }
 }

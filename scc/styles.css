@@ -61,6 +61,21 @@ button {
     color: #fff;
     -webkit-animation: button-hover 1s ease;
             animation: button-hover 1s ease; }
+  .button.calendar_toggler {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer; }
+    .button.calendar_toggler .calendar_toggler_icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
 
 html {
   overflow-x: hidden; }
@@ -925,6 +940,12 @@ body {
             margin-right: .5rem;
             width: auto;
             max-width: none; }
+  .dashboard .dashboard_date_range {
+    position: absolute;
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 0.9rem;
+    margin-left: 1rem; }
 
 .table {
   width: 100%; }
@@ -1103,7 +1124,34 @@ body {
   border-radius: 50%;
   -webkit-box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
-  position: relative; }
+  position: relative;
+  margin: 1.25rem auto 0; }
+  .progressbar_chart::before {
+    content: attr(data-percentage) "%";
+    z-index: 5;
+    position: absolute;
+    top: calc(50% - .75rem);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #9c27b0;
+    white-space: nowrap; }
+  .progressbar_chart::after {
+    content: attr(data-slogan);
+    z-index: 5;
+    position: absolute;
+    top: calc(50% + .5rem);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.38);
+    text-align: center;
+    line-height: 1.25; }
   .progressbar_chart .progress_chart_progress {
     position: absolute;
     top: 0;
@@ -1866,5 +1914,22 @@ body {
     -webkit-transform: rotate(-135deg);
         -ms-transform: rotate(-135deg);
             transform: rotate(-135deg); }
+  .progressbar_chart .progress_chart_inner {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    z-index: 4;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: #fff;
+    height: 9.25rem;
+    width: 9.25rem; }
+  .progressbar_chart.show_value::before {
+    content: attr(data-value); }
+  .progressbar_chart.show_value::after {
+    content: attr(data-slogan) " (" attr(data-percentage) "%)"; }
 
 /*# sourceMappingURL=styles.css.map */
