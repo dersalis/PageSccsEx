@@ -1932,4 +1932,101 @@ body {
   .progressbar_chart.show_value::after {
     content: attr(data-slogan) " (" attr(data-percentage) "%)"; }
 
+@-webkit-keyframes sliding {
+  from {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+  to {
+    -webkit-transform: translate(-34%);
+            transform: translate(-34%); } }
+
+@keyframes sliding {
+  from {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+  to {
+    -webkit-transform: translate(-34%);
+            transform: translate(-34%); } }
+
+.slider .slider_mask {
+  overflow: hidden;
+  position: relative; }
+  .slider .slider_mask::before, .slider .slider_mask::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 2rem;
+    height: 100%;
+    z-index: 1; }
+  .slider .slider_mask::before {
+    background-image: -webkit-gradient(linear, left top, right top, from(#fafafa), color-stop(50%, transparent));
+    background-image: -webkit-linear-gradient(left, #fafafa, transparent 50%);
+    background-image: -o-linear-gradient(left, #fafafa, transparent 50%);
+    background-image: linear-gradient(to right, #fafafa, transparent 50%);
+    left: 0; }
+  .slider .slider_mask::after {
+    background-image: -webkit-gradient(linear, right top, left top, from(#fafafa), color-stop(50%, transparent));
+    background-image: -webkit-linear-gradient(right, #fafafa, transparent 50%);
+    background-image: -o-linear-gradient(right, #fafafa, transparent 50%);
+    background-image: linear-gradient(to left, #fafafa, transparent 50%);
+    right: 0; }
+  .slider .slider_mask .slider_wraper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(25% * 6);
+    animation: sliding 15s infinite alternate-reverse linear; }
+    .slider .slider_mask .slider_wraper .slider_card {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      width: 25%;
+      text-align: center;
+      -webkit-box-shadow: 0 0.27rem 1.25rem rgba(0, 0, 0, 0.2);
+              box-shadow: 0 0.27rem 1.25rem rgba(0, 0, 0, 0.2);
+      background: #fff;
+      margin: 0 1rem; }
+      .slider .slider_mask .slider_wraper .slider_card .slider_icons_wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .slider .slider_mask .slider_wraper .slider_card .slider_icons_wrapper .slider_icon_wrapper {
+          width: calc(100% / 3);
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          padding: 1rem 0;
+          font-size: 0.9rem;
+          color: rgba(0, 0, 0, 0.54);
+          -webkit-transition: color 0.2s;
+          -o-transition: color 0.2s;
+          transition: color 0.2s; }
+          .slider .slider_mask .slider_wraper .slider_card .slider_icons_wrapper .slider_icon_wrapper:hover, .slider .slider_mask .slider_wraper .slider_card .slider_icons_wrapper .slider_icon_wrapper:focus {
+            color: #9c27b0; }
+      .slider .slider_mask .slider_wraper .slider_card .slider_info_wraper {
+        padding: 1rem;
+        margin: .5rem 0; }
+        .slider .slider_mask .slider_wraper .slider_card .slider_info_wraper .slider_avatar {
+          border-radius: 50%;
+          max-width: 100%;
+          -webkit-box-shadow: 0 0.27rem 1.25rem rgba(0, 0, 0, 0.2);
+                  box-shadow: 0 0.27rem 1.25rem rgba(0, 0, 0, 0.2); }
+        .slider .slider_mask .slider_wraper .slider_card .slider_info_wraper .slider_name {
+          margin-top: 1.5rem;
+          color: rgba(0, 0, 0, 0.38); }
+        .slider .slider_mask .slider_wraper .slider_card .slider_info_wraper .slider_position {
+          font-size: 1.25rem;
+          color: rgba(0, 0, 0, 0.38);
+          margin-top: -1.5rem; }
+
 /*# sourceMappingURL=styles.css.map */

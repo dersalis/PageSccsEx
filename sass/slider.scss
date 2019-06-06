@@ -1,0 +1,94 @@
+@keyframes sliding {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translate(-34%)
+    }
+}
+
+.slider {
+
+    .slider_mask {
+        $candidats_count: 6;
+        $card_width: 25%;
+
+        overflow: hidden;
+        position: relative;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 2rem;
+            height: 100%;
+            z-index: 1;
+        }
+
+        &::before {
+            background-image: linear-gradient(to right, $gray-50, transparent 50%);
+            left: 0;
+        }
+
+        &::after {
+            background-image: linear-gradient(to left, $gray-50, transparent 50%);
+            right: 0;
+        }
+
+        .slider_wraper {
+            display: flex;
+            width: calc(#{$card_width} * #{$candidats_count});
+            animation: sliding 15s infinite alternate-reverse linear;
+
+            .slider_card {
+                display: flex;
+                flex-direction: column;
+                width: $card_width;
+                text-align: center;
+                box-shadow: $shadow-20;
+                background: $light;
+                margin: 0 1rem;
+
+                .slider_icons_wrapper {
+                    display: flex;
+                    // width: 150%;
+
+                    .slider_icon_wrapper {
+                        width: calc(100% / 3);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 1rem 0;
+                        font-size: $font-size-sm;
+                        color: $dark-secondary;
+                        transition: color $transition-duration;
+
+                        &:hover, &:focus {
+                            color: $primary;
+                        }
+                    }
+                }
+
+                .slider_info_wraper {
+                    padding: 1rem;
+                    margin: .5rem 0;
+
+                    .slider_avatar {
+                        border-radius: 50%;
+                        max-width: 100%;
+                        box-shadow: $shadow-20;
+                    }
+                    .slider_name {
+                        margin-top: 1.5rem;
+                        color: $dark-diabled;
+                    }
+                    .slider_position {
+                        font-size: $font-size-lg;
+                        color: $dark-diabled;
+                        margin-top: -1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
